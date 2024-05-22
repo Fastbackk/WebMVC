@@ -1,0 +1,37 @@
+@model MVCproject.Models.ArabaModel
+
+@{
+    ViewData["Title"] = "Araba Düzenle";
+}
+
+<h2>Araba Düzenle</h2>
+
+<form asp-action="Duzenle" method="post">
+    <div class="form-group">
+        <label asp-for="Id" class="control-label"></label>
+        <input asp-for="Id" class="form-control" readonly />
+    </div>
+    <div class="form-group">
+        <label asp-for="Marka" class="control-label"></label>
+        <input asp-for="Marka" class="form-control" />
+        <span asp-validation-for="Marka" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Model" class="control-label"></label>
+        <input asp-for="Model" class="form-control" />
+        <span asp-validation-for="Model" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Yil" class="control-label"></label>
+        <input asp-for="Yil" class="form-control" />
+        <span asp-validation-for="Yil" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Yakit" class="control-label"></label>
+        <input asp-for="Yakit" class="form-control" />
+        <span asp-validation-for="Yakit" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Kaydet" class="btn btn-primary" />
+    </div>
+</form>

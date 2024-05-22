@@ -1,0 +1,40 @@
+﻿@model List<MVCproject.Models.ArabaModel>
+
+@{
+    ViewData["Title"] = "Ana Sayfa";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Araba Listesi</h1>
+    <a asp-action="Ekle" type="button" class="btn btn-success">Ekle</a>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Marka</th>
+                <th scope="col">Model</th>
+                <th scope="col">Yıl</th>
+                <th scope="col">Yakıt</th>
+                <th scope="col">İşlemler</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var eleman in Model)
+            {
+                <tr>
+                    <th scope="row">@eleman.Id</th>
+                    <td>@eleman.Marka</td>
+                    <td>@eleman.Model</td>
+                    <td>@eleman.Yil</td>
+                    <td>@eleman.Yakit</td>
+                    <td>
+                        <a type="button" class="btn btn-danger" asp-action="Sil" asp-route-id="@eleman.Id">Sil</a>
+                        <a type="button" class="btn btn-primary" asp-action="Detay" asp-route-id="@eleman.Id">Göster</a>
+                        <a type="button" class="btn btn-warning" asp-action="Duzenle" asp-route-id="@eleman.Id">Düzenle</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

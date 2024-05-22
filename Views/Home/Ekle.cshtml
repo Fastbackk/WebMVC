@@ -1,0 +1,33 @@
+@model ArabaModel
+
+@{
+    ViewData["Title"] = "Yeni Araba Ekle";
+}
+
+<h2>Yeni Araba Ekle</h2>
+
+<form asp-action="Ekle" method="post">
+    <div class="form-group">
+        <label asp-for="Marka" class="control-label"></label>
+        <input asp-for="Marka" class="form-control" />
+        <span asp-validation-for="Marka" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Model" class="control-label"></label>
+        <input asp-for="Model" class="form-control" />
+        <span asp-validation-for="Model" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Yil" class="control-label"></label>
+        <input asp-for="Yil" class="form-control" />
+        <span asp-validation-for="Yil" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Yakit" class="control-label"></label>
+        <input asp-for="Yakit" class="form-control" />
+        <span asp-validation-for="Yakit" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Ekle" class="btn btn-primary" />
+    </div>
+</form>

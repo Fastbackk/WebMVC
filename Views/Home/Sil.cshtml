@@ -1,0 +1,31 @@
+@model MVCproject.Models.ArabaModel
+
+@{
+    ViewData["Title"] = "Araba Sil";
+}
+
+<h2>Araba Sil</h2>
+
+<div>
+    <h4>@Model.Marka @Model.Model</h4>
+    <dl class="row">
+        <dt class="col-sm-2">
+            Yıl
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Yil
+        </dd>
+        <dt class="col-sm-2">
+            Yakıt
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Yakit
+        </dd>
+    </dl>
+
+    <form asp-action="Sil">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Sil" class="btn btn-danger" /> |
+        <a asp-action="Index" class="btn btn-secondary">İptal</a>
+    </form>
+</div>
